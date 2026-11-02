@@ -48,11 +48,25 @@ function JieqiPage() {
                 <p className="mt-4 leading-relaxed">{F.intro}</p>
                 {F.foods.map((f) => (
                   <div key={f.name} className="mt-6 rounded-card border border-line bg-paper p-5">
-                    <h2 className="font-serif text-2xl">{f.name}</h2>
-                    <blockquote className="mt-3 border-l-2 border-[#3F6B5C] pl-3 font-serif text-sm leading-relaxed">
-                      {f.quote}
-                    </blockquote>
-                    <p className="mt-3 text-sm leading-relaxed text-muted">{f.explain}</p>
+                    <div className="flex gap-4 items-start">
+                      {f.img ? (
+                        <img
+                          src={f.img}
+                          alt={f.name}
+                          width={72}
+                          height={72}
+                          className="h-[72px] w-[72px] shrink-0 rounded-xl object-cover bg-[#efe6d6]"
+                          loading="lazy"
+                        />
+                      ) : null}
+                      <div className="min-w-0 flex-1">
+                        <h2 className="font-serif text-2xl">{f.name}</h2>
+                        <blockquote className="mt-3 border-l-2 border-[#3F6B5C] pl-3 font-serif text-sm leading-relaxed">
+                          {f.quote}
+                        </blockquote>
+                        <p className="mt-3 text-sm leading-relaxed text-muted">{f.explain}</p>
+                      </div>
+                    </div>
                   </div>
                 ))}
                 <div className="mt-6 rounded-card border border-[#3F6B5C]/40 bg-[#3F6B5C]/[0.06] p-5">

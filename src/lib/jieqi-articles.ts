@@ -9,6 +9,8 @@ export type FoodNote = {
   name: string;
   quote: string;
   explain: string;
+  /** 共用植株縮圖（public/foods/{id}.jpg），對齊四時調攝圖庫 */
+  img?: string;
 };
 
 export type Recipe = {
@@ -36,11 +38,13 @@ export const JIEQI_FOOD: Record<string, { yue: SeasonFood; cmn: SeasonFood; en: 
       foods: [
         {
           name: "梨",
+          img: "/foods/pear.jpg",
           quote: "「梨甘涼。潤肺，清胃，涼心，滌熱息風，化痰已嗽，養陰濡燥……中虛寒瀉、乳婦、金瘡忌之。新產及病後，須蒸熟食之。」",
           explain: "書中話梨味甘、性涼，屬滋潤一類嘅水果；亦提醒腸胃虛寒、易肚瀉嘅人唔宜，產後同病後要蒸熟先食。",
         },
         {
           name: "百合",
+          img: "/foods/lily.jpg",
           quote: "「百合甘平。潤肺，補胃，清心，定魄，息驚，澤膚……或蒸或煮，而淡食之……風寒痰嗽、中寒便滑者勿食。」",
           explain: "書中話百合味甘、性平，建議蒸或者煮，淡淡哋食；傷風咳、腸胃寒、大便稀嘅時候就唔好食。",
         },
@@ -64,11 +68,13 @@ export const JIEQI_FOOD: Record<string, { yue: SeasonFood; cmn: SeasonFood; en: 
       foods: [
         {
           name: "梨",
+          img: "/foods/pear.jpg",
           quote: "「梨甘涼。潤肺，清胃，涼心，滌熱息風，化痰已嗽，養陰濡燥……中虛寒瀉、乳婦、金瘡忌之。新產及病後，須蒸熟食之。」",
           explain: "書中說梨味甘、性涼，屬滋潤一類的水果；也提醒腸胃虛寒、容易腹瀉的人不宜，產後與病後要蒸熟再吃。",
         },
         {
           name: "百合",
+          img: "/foods/lily.jpg",
           quote: "「百合甘平。潤肺，補胃，清心，定魄，息驚，澤膚……或蒸或煮，而淡食之……風寒痰嗽、中寒便滑者勿食。」",
           explain: "書中說百合味甘、性平，建議蒸或煮，清淡地吃；傷風咳嗽、腸胃寒、大便稀的時候就不要吃。",
         },
@@ -92,11 +98,13 @@ export const JIEQI_FOOD: Record<string, { yue: SeasonFood; cmn: SeasonFood; en: 
       foods: [
         {
           name: "Pear",
+          img: "/foods/pear.jpg",
           quote: "「梨甘涼。潤肺，清胃，涼心，滌熱息風，化痰已嗽，養陰濡燥……中虛寒瀉、乳婦、金瘡忌之。新產及病後，須蒸熟食之。」",
           explain: "The book says pear is sweet in flavour and cool in nature, a moistening kind of fruit; it also warns that people with a weak, cold stomach who are prone to loose stools should avoid it, and that after childbirth or illness it should be steamed before eating.",
         },
         {
           name: "Lily bulb",
+          img: "/foods/lily.jpg",
           quote: "「百合甘平。潤肺，補胃，清心，定魄，息驚，澤膚……或蒸或煮，而淡食之……風寒痰嗽、中寒便滑者勿食。」",
           explain: "The book says lily bulb is sweet and neutral in nature, and suggests steaming or boiling it and eating it plainly; it should not be eaten during a wind-cold cough, a cold stomach or loose stools.",
         },
@@ -123,11 +131,13 @@ export const JIEQI_FOOD: Record<string, { yue: SeasonFood; cmn: SeasonFood; en: 
       foods: [
         {
           name: "鮮柿",
+          img: "/foods/persimmon.jpg",
           quote: "「鮮柿甘寒。養肺胃之陰，宜於火燥津枯之體。以大而無核，熟透不澀者良……凡中氣虛寒，痰濕內盛，外感風寒，胸腹痞悶，產後，病後，瀉痢……皆忌之。不可與蟹同食。」",
           explain: "書中話鮮柿味甘、性寒，要揀大、無核、熟透唔澀嘅；亦提醒腸胃虛寒、傷風、產後同病後嘅人唔宜，同埋唔好同蟹一齊食。",
         },
         {
           name: "柿餅",
+          img: "/foods/dried-persimmon.jpg",
           quote: "「乾柿甘平。健脾補胃，潤肺澀腸……老稚咸宜，果中聖品……柿餅、柿花功用相似，體堅耐久。」",
           explain: "書中話曬乾嘅柿味甘、性平，比鮮柿溫和，老人細路都啱；柿餅耐放，秋冬食好方便。",
         },
@@ -151,11 +161,13 @@ export const JIEQI_FOOD: Record<string, { yue: SeasonFood; cmn: SeasonFood; en: 
       foods: [
         {
           name: "鮮柿",
+          img: "/foods/persimmon.jpg",
           quote: "「鮮柿甘寒。養肺胃之陰，宜於火燥津枯之體。以大而無核，熟透不澀者良……凡中氣虛寒，痰濕內盛，外感風寒，胸腹痞悶，產後，病後，瀉痢……皆忌之。不可與蟹同食。」",
           explain: "書中說鮮柿味甘、性寒，要挑大、無核、熟透不澀的；也提醒腸胃虛寒、感冒、產後與病後的人不宜，並且不要與螃蟹同吃。",
         },
         {
           name: "柿餅",
+          img: "/foods/dried-persimmon.jpg",
           quote: "「乾柿甘平。健脾補胃，潤肺澀腸……老稚咸宜，果中聖品……柿餅、柿花功用相似，體堅耐久。」",
           explain: "書中說曬乾的柿味甘、性平，比鮮柿溫和，老人小孩都適合；柿餅耐放，秋冬吃起來很方便。",
         },
@@ -179,11 +191,13 @@ export const JIEQI_FOOD: Record<string, { yue: SeasonFood; cmn: SeasonFood; en: 
       foods: [
         {
           name: "Fresh persimmon",
+          img: "/foods/persimmon.jpg",
           quote: "「鮮柿甘寒。養肺胃之陰，宜於火燥津枯之體。以大而無核，熟透不澀者良……凡中氣虛寒，痰濕內盛，外感風寒，胸腹痞悶，產後，病後，瀉痢……皆忌之。不可與蟹同食。」",
           explain: "The book says fresh persimmon is sweet and cold in nature, and to choose large, seedless fruit that is fully ripe and not astringent; it also warns that people with a weak, cold stomach, those with a cold, and those after childbirth or illness should avoid it, and that it should not be eaten together with crab.",
         },
         {
           name: "Dried persimmon",
+          img: "/foods/dried-persimmon.jpg",
           quote: "「乾柿甘平。健脾補胃，潤肺澀腸……老稚咸宜，果中聖品……柿餅、柿花功用相似，體堅耐久。」",
           explain: "The book says dried persimmon is sweet and neutral in nature, gentler than fresh persimmon, and suitable for old and young alike; dried persimmons keep well, which makes them convenient to eat in autumn and winter.",
         },
@@ -210,11 +224,13 @@ export const JIEQI_FOOD: Record<string, { yue: SeasonFood; cmn: SeasonFood; en: 
       foods: [
         {
           name: "栗",
+          img: "/foods/chestnut.jpg",
           quote: "「栗甘平。補腎，益氣，厚腸，止瀉，耐飢，最利腰腳，解羊肉毒。……凡食均須細嚼，連液吞咽，則有益。若頓食至飽，反壅氣傷脾。……以生極難化，熟最滯氣也。」",
           explain: "書中話栗味甘、性平，要慢慢咀嚼連汁吞；亦提醒唔好一次食飽，外感未清、產後同病後嘅人唔宜。生栗難消化，熟栗又容易滯氣。",
         },
         {
           name: "乾棗",
+          img: "/foods/jujube.jpg",
           quote: "「乾者甘溫。補脾養胃，滋營充液，潤肺安神。食之耐飢，亦可浸酒。……多食皆能生蟲、助熱、損齒、生痰。凡小兒、產後，及溫熱、暑濕諸病前後、黃疸、腫脹、疳積、痰滯，並忌之。」",
           explain: "書中話乾棗味甘、性溫，比鮮棗溫和；亦提醒小兒、產後同埋濕熱病前後唔宜多食。",
         },
@@ -238,11 +254,13 @@ export const JIEQI_FOOD: Record<string, { yue: SeasonFood; cmn: SeasonFood; en: 
       foods: [
         {
           name: "栗",
+          img: "/foods/chestnut.jpg",
           quote: "「栗甘平。補腎，益氣，厚腸，止瀉，耐飢，最利腰腳，解羊肉毒。……凡食均須細嚼，連液吞咽，則有益。若頓食至飽，反壅氣傷脾。……以生極難化，熟最滯氣也。」",
           explain: "書中說栗味甘、性平，要細細咀嚼連汁吞下；也提醒不要一次吃太飽，外感未清、產後與病後的人不宜。生栗難消化，熟栗又容易滯氣。",
         },
         {
           name: "乾棗",
+          img: "/foods/jujube.jpg",
           quote: "「乾者甘溫。補脾養胃，滋營充液，潤肺安神。食之耐飢，亦可浸酒。……多食皆能生蟲、助熱、損齒、生痰。凡小兒、產後，及溫熱、暑濕諸病前後、黃疸、腫脹、疳積、痰滯，並忌之。」",
           explain: "書中說乾棗味甘、性溫，比鮮棗溫和；也提醒小兒、產後以及濕熱病前後不宜多吃。",
         },
@@ -266,11 +284,13 @@ export const JIEQI_FOOD: Record<string, { yue: SeasonFood; cmn: SeasonFood; en: 
       foods: [
         {
           name: "Chestnut",
+          img: "/foods/chestnut.jpg",
           quote: "「栗甘平。補腎，益氣，厚腸，止瀉，耐飢，最利腰腳，解羊肉毒。……凡食均須細嚼，連液吞咽，則有益。若頓食至飽，反壅氣傷脾。……以生極難化，熟最滯氣也。」",
           explain: "The book says chestnut is sweet and neutral in nature, and should be chewed finely and swallowed with its juice; it also warns against eating until full in one sitting, and that people still clearing an external cold, after childbirth or illness should avoid it. Raw chestnut is hard to digest; cooked chestnut tends to stagnate qi.",
         },
         {
           name: "Dried jujube",
+          img: "/foods/jujube.jpg",
           quote: "「乾者甘溫。補脾養胃，滋營充液，潤肺安神。食之耐飢，亦可浸酒。……多食皆能生蟲、助熱、損齒、生痰。凡小兒、產後，及溫熱、暑濕諸病前後、黃疸、腫脹、疳積、痰滯，並忌之。」",
           explain: "The book says dried jujube is sweet and warm in nature, milder than fresh dates; it also warns that children, those after childbirth, and those around damp-heat illnesses should not eat much of it.",
         },
