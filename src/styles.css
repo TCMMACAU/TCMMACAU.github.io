@@ -774,3 +774,24 @@ section div[id] {
     display: none !important;
   }
 }
+
+
+/* layout-visible-a: chapter pills + peek under folded titles */
+.nav-chapters {
+  scrollbar-width: thin;
+}
+.fold-peek {
+  border-radius: 0.5rem;
+  background: color-mix(in oklab, var(--color-ink) 4%, transparent);
+  padding: 0.55rem 0.75rem;
+  line-height: 1.55;
+}
+.play-shelf-more summary::-webkit-details-marker {
+  display: none;
+}
+.play-shelf-more .play-open {
+  color: var(--color-accent);
+}
+.play-shelf-more details[open] .play-open {
+  display: none;
+}

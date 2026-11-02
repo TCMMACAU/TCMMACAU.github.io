@@ -76,7 +76,11 @@ function Home() {
           <p className="text-xs tracking-[0.32em] text-accent">{home.kicker}</p>
           <h1 className="mt-4 font-serif text-6xl font-semibold md:text-8xl">{ui.site}</h1>
           <p className="mt-5 max-w-xl text-lg text-ink">{home.lede}</p>
+          <p className="mt-4 max-w-xl rounded-xl bg-accent/10 px-4 py-3 text-base text-ink">{home.splitLine}</p>
           <FeelingPick />
+          <a href="#booking" className="mt-5 inline-block text-sm text-accent no-underline">
+            {home.bookHint}
+          </a>
           <div className="mt-8 max-w-xl">
             <DayGuide />
           </div>

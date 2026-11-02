@@ -1,38 +1,106 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { CardGrid, ClinicLayout, Section } from "@/components/clinic-layout";
-import { BodySignals, ColourHunt, FriendFlip, HandoverChecklist, MicroDraw, PressurePark, ShoulderDrop, SlowTrace, StandReset, TensionMap } from "@/components/yali-tools";
+import { CardGrid, ClinicLayout, RoomBookingStrip, Section } from "@/components/clinic-layout";
+import {
+  BodySignals,
+  ColourHunt,
+  FriendFlip,
+  HandoverChecklist,
+  MicroDraw,
+  PressurePark,
+  ShoulderDrop,
+  SlowTrace,
+  StandReset,
+  TensionMap,
+} from "@/components/yali-tools";
 import { RoomMusicSection } from "@/components/room-music";
 import { FollowLessons } from "@/components/follow-lessons";
 import { BreathFirst, PlayBlock } from "@/components/play-block";
 import { PointMap } from "@/components/point-map";
 import { useCopy, useLang } from "@/i18n/lang";
 import { MUSIC_UI } from "@/lib/room-music";
+import type { ReactNode } from "react";
 
 export const Route = createFileRoute("/yali")({ component: YaliPage });
 
 /**
- * 舒壓 · 壓力繃緊同身心反應. Same journey as the other rooms:
- * breathe first → follow along → self-help practice → play tools →
- * when to see a doctor (kept open, never folded) → deeper reading (folded).
- * Within-page de-duplication (2026-10): PressurePark is the single full
- * pressure-parking version, the timed ShoulderDrop is the canonical
- * shoulder sequence, the breath circle is the one full 吸4呼6 statement,
- * and 一日節奏 is folded like the other rooms' deeper sections.
+ * 舒壓 · layout-visible-a draft:
+ * four chapter sticky nav · room TOC · play tools featured/more · peek folds · room booking strip.
+ * Do not merge to main until clinician review.
  */
-const ORDER = [
-  "breath",
-  "follow",
-  "feel",
-  "shoulder",
-  "park",
-  "playtools",
-  "daily",
-  "acu",
-  "play",
-  "music",
-  "care",
-  "view",
-] as const;
+const ORDER = ["breath", "follow", "learn", "care"] as const;
+
+function RoomToc() {
+  const c = useCopy().yali;
+  return (
+    <section id="room-toc" className="border-t border-line py-10">
+      <p className="mb-2 text-xs tracking-[0.22em] text-accent">{c.tocK}</p>
+      <h2 className="mb-2 font-serif text-2xl">{c.tocT}</h2>
+      <p className="text-sm text-muted">{c.tocLead}</p>
+      <ul className="mt-4 space-y-2 rounded-card border border-line bg-paper px-5 py-4 text-sm text-muted">
+        {c.toc.map((item) => (
+          <li key={item.href}>
+            <a href={item.href} className="text-ink no-underline hover:text-accent">
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}
+
+function PlayToolMore({
+  title,
+  lead,
+  openLabel,
+  children,
+}: {
+  title: string;
+  lead: string;
+  openLabel: string;
+  children: ReactNode;
+}) {
+  return (
+    <details className="play-shelf-more rounded-card border border-line bg-paper px-4 py-3">
+      <summary className="cursor-pointer list-none">
+        <p className="font-serif text-lg text-ink">{title}</p>
+        <p className="mt-1 text-sm text-muted">
+          {lead}{" "}
+          <span className="play-open tracking-[0.04em]">{openLabel}</span>
+        </p>
+      </summary>
+      <div className="mt-4 border-t border-line pt-4">{children}</div>
+    </details>
+  );
+}
+
+function PlayToolsShelf() {
+  const c = useCopy().yali;
+  return (
+    <>
+      <div className="mt-6 grid gap-10">
+        <StandReset />
+        <FriendFlip />
+        <SlowTrace />
+      </div>
+      <p className="mt-8 text-xs tracking-[0.18em] text-accent">{c.playMoreK}</p>
+      <div className="mt-3 grid gap-3">
+        <PlayToolMore title={c.micro.title} lead={c.micro.lead} openLabel={c.playOpen}>
+          <MicroDraw />
+        </PlayToolMore>
+        <PlayToolMore title={c.handover.title} lead={c.handover.lead} openLabel={c.playOpen}>
+          <HandoverChecklist />
+        </PlayToolMore>
+        <PlayToolMore title={c.bodymap.title} lead={c.bodymap.lead} openLabel={c.playOpen}>
+          <TensionMap />
+        </PlayToolMore>
+        <PlayToolMore title={c.hunt.title} lead={c.hunt.lead} openLabel={c.playOpen}>
+          <ColourHunt />
+        </PlayToolMore>
+      </div>
+    </>
+  );
+}
 
 function YaliPage() {
   const copy = useCopy();
@@ -45,6 +113,8 @@ function YaliPage() {
       title={c.title}
       kicker={c.kicker}
       lede={c.lede}
+      pathHint={c.pathHint}
+      chapterNav
       bgSrc="/bg-yali.jpg?v=1"
       nav={c.nav}
       order={ORDER}
@@ -52,6 +122,7 @@ function YaliPage() {
       footerNote={c.footerNote}
     >
       <BreathFirst room="yali" />
+      <RoomToc />
       <FollowLessons room="yali" />
 
       <Section id="feel" fav="yali#feel" kicker={c.feelK} title={c.feelT}>
@@ -73,18 +144,50 @@ function YaliPage() {
 
       <Section id="playtools" kicker={c.play2K} title={c.play2T}>
         <p className="text-muted">{c.play2Lead}</p>
-        <div className="mt-6 grid gap-10">
-          <StandReset />
-          <FriendFlip />
-          <MicroDraw />
-          <SlowTrace />
-          <HandoverChecklist />
-          <TensionMap />
-          <ColourHunt />
-        </div>
+        <PlayToolsShelf />
       </Section>
 
-      <Section id="daily" kicker={c.dailyK} title={c.dailyT} collapsible safety={<p>{c.dailyLead}</p>}>
+      <section id="learn" className="border-t border-line py-12">
+        <p className="mb-2 text-xs tracking-[0.22em] text-accent">{c.learnK}</p>
+        <h2 className="font-serif text-3xl">{c.learnT}</h2>
+        <p className="mt-3 text-muted">{c.learnLead}</p>
+        <ul className="mt-4 grid gap-2 text-sm text-muted sm:grid-cols-2">
+          <li>
+            <a href="#daily" className="text-ink no-underline">
+              {c.dailyT}
+            </a>
+          </li>
+          <li>
+            <a href="#acu" className="text-ink no-underline">
+              {c.acuT}
+            </a>
+          </li>
+          <li>
+            <a href="#view" className="text-ink no-underline">
+              {c.viewT}
+            </a>
+          </li>
+          <li>
+            <a href="#music" className="text-ink no-underline">
+              {mui.sectionT}
+            </a>
+          </li>
+          <li>
+            <a href="#play" className="text-ink no-underline">
+              {copy.play.title}
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <Section
+        id="daily"
+        kicker={c.dailyK}
+        title={c.dailyT}
+        collapsible
+        peek={<p>{c.dailyPeek}</p>}
+        safety={<p>{c.dailyLead}</p>}
+      >
         <CardGrid items={c.daily} />
       </Section>
 
@@ -99,6 +202,11 @@ function YaliPage() {
       <Section id="music" kicker={mui.sectionK} title={mui.sectionT}>
         <p className="text-muted">{mui.lead}</p>
         <RoomMusicSection />
+      </Section>
+
+      <Section id="view" kicker={c.viewK} title={c.viewT} collapsible peek={<p>{c.viewPeek}</p>}>
+        <p>{c.viewP1}</p>
+        <p className="mt-3 text-muted">{c.viewP2}</p>
       </Section>
 
       {/* Safety: always visible, never folded */}
@@ -129,11 +237,7 @@ function YaliPage() {
         >
           {c.careBook}
         </Link>
-      </Section>
-
-      <Section id="view" kicker={c.viewK} title={c.viewT} collapsible>
-        <p>{c.viewP1}</p>
-        <p className="mt-3 text-muted">{c.viewP2}</p>
+        <RoomBookingStrip title={c.roomBookT} lead={c.roomBookLead} cta={c.roomBookCta} />
       </Section>
     </ClinicLayout>
   );

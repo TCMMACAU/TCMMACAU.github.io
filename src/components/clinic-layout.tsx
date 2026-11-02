@@ -7,6 +7,7 @@ import { DayGuide } from "@/components/day-guide";
 import { ViewCount } from "@/components/view-count";
 import { useCopy, useLang } from "@/i18n/lang";
 import { MUSIC_UI } from "@/lib/room-music";
+import { BOOKING_URL } from "@/lib/booking";
 
 type NavItem = { href: string; label: string };
 
@@ -116,6 +117,8 @@ export function ClinicLayout({
   footerName,
   footerNote,
   order,
+  pathHint,
+  chapterNav = false,
 }: {
   theme: "anshen" | "jieyu" | "anmei" | "yali";
   title: string;
@@ -128,6 +131,10 @@ export function ClinicLayout({
   footerNote: string;
   /** Section ids in page order; the nav bar follows it and gains a "#breath" entry first. */
   order?: readonly string[];
+  /** Soft dual-path line under the lede (try / book). */
+  pathHint?: string;
+  /** Short chapter pills instead of a long anchor list. */
+  chapterNav?: boolean;
 }) {
   const copy = useCopy();
   const { lang } = useLang();
@@ -180,6 +187,9 @@ export function ClinicLayout({
           <p className="text-xs tracking-[0.28em] text-accent">{kicker}</p>
           <h1 className="mt-3 font-serif text-6xl font-semibold md:text-7xl">{title}</h1>
           <p className="mt-4 max-w-xl text-lg text-ink">{lede}</p>
+          {pathHint && (
+            <p className="mt-4 max-w-xl rounded-xl bg-accent/10 px-4 py-3 text-sm text-ink">{pathHint}</p>
+          )}
           {order?.includes("breath") && (
             <a
               href="#breath"
@@ -208,10 +218,23 @@ export function ClinicLayout({
             </Link>
             <RoomJump theme={theme} tone="solid" />
           </div>
-          <ul className="flex gap-5 overflow-x-auto py-1 text-sm whitespace-nowrap">
-            {navItems.map((item) => (
+          <ul
+            className={
+              chapterNav
+                ? "nav-chapters flex gap-2 overflow-x-auto py-1 text-sm whitespace-nowrap"
+                : "flex gap-5 overflow-x-auto py-1 text-sm whitespace-nowrap"
+            }
+          >
+            {navItems.map((item, i) => (
               <li key={item.href}>
-                <a href={item.href} className="text-ink no-underline">
+                <a
+                  href={item.href}
+                  className={
+                    chapterNav
+                      ? `inline-flex items-center rounded-full border px-3.5 py-1.5 no-underline ${i === 0 ? "border-accent bg-accent text-paper" : "border-line bg-paper text-ink"}`
+                      : "text-ink no-underline"
+                  }
+                >
                   {item.label}
                 </a>
               </li>
@@ -262,6 +285,7 @@ export function Section({
   collapsible = false,
   safety,
   fav,
+  peek,
 }: {
   id: string;
   /** "room#anchor" key: shows a 我的收藏 star beside the heading. */
@@ -273,10 +297,12 @@ export function Section({
   collapsible?: boolean;
   /** Safety / caution text of a folded section; always shown, never folded away. */
   safety?: ReactNode;
+  /** Visible under the title when folded: summary / names so people need not guess. */
+  peek?: ReactNode;
 }) {
   if (collapsible)
     return (
-      <FoldSection id={id} kicker={kicker} title={title} safety={safety}>
+      <FoldSection id={id} kicker={kicker} title={title} safety={safety} peek={peek}>
         {children}
       </FoldSection>
     );
@@ -302,12 +328,14 @@ function FoldSection({
   title,
   children,
   safety,
+  peek,
 }: {
   id: string;
   kicker: string;
   title: string;
   children: ReactNode;
   safety?: ReactNode;
+  peek?: ReactNode;
 }) {
   const ui = useCopy().ui;
   return (
@@ -316,6 +344,7 @@ function FoldSection({
         <summary className="cursor-pointer list-none">
           <p className="mb-2 text-xs tracking-[0.22em] text-accent">{kicker}</p>
           <h2 className="font-serif text-3xl">{title}</h2>
+          {peek && <div className="fold-peek mt-3 text-sm text-muted">{peek}</div>}
           <p className="fold-hint mt-3 inline-flex min-h-11 items-center rounded-full border border-line bg-paper px-4 py-2 text-sm text-ink">
             <span className="fold-open">{ui.expand}</span>
             <span className="fold-close">{ui.close}</span>
@@ -325,6 +354,37 @@ function FoldSection({
       </details>
       {safety && <div className="mt-5 text-sm text-muted">{safety}</div>}
     </section>
+  );
+}
+
+/** Light booking strip for room footers; uses the shared BOOKING_URL. */
+export function RoomBookingStrip({
+  title,
+  lead,
+  cta,
+}: {
+  title: string;
+  lead: string;
+  cta: string;
+}) {
+  return (
+    <div
+      id="room-book"
+      className="mt-8 flex flex-wrap items-center justify-between gap-4 rounded-card border border-line bg-paper px-5 py-4"
+    >
+      <div className="max-w-md">
+        <h3 className="font-serif text-xl">{title}</h3>
+        <p className="mt-1 text-sm text-muted">{lead}</p>
+      </div>
+      <a
+        href={BOOKING_URL}
+        target="_blank"
+        rel="noreferrer"
+        className="inline-flex min-h-11 items-center rounded-full bg-accent px-5 text-sm text-paper no-underline"
+      >
+        {cta}
+      </a>
+    </div>
   );
 }
 
