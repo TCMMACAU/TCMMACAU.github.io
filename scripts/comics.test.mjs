@@ -15,11 +15,11 @@ const {
 } = await jiti.import(`${root}src/lib/comics.ts`);
 const read = (p) => readFileSync(`${root}${p}`, "utf8");
 
-test("catalog has at least the current 舒壓 comic", () => {
+test("catalog has at least the current 解鬱 comic", () => {
   assert.ok(COMICS.length >= 1);
   const cur = currentComic();
-  assert.equal(cur.theme, "yali");
-  assert.match(cur.image, /office-kids-loosen-up/);
+  assert.equal(cur.theme, "jieyu");
+  assert.match(cur.image, /fangxia-let-go/);
   for (const lang of ["yue", "cmn", "en"]) {
     assert.ok(cur.title[lang]);
     assert.ok(cur.alt[lang]);

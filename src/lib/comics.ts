@@ -37,10 +37,26 @@ export const COMIC_THEME_ROOM: Record<ComicTheme, "/anshen" | "/jieyu" | "/anmei
 };
 
 /**
- * Catalog. Current featured: 安神「學識放下，孑然一身」; prior 舒壓「打工仔，放鬆啲」.
- * Next weeks can add anshen / jieyu / anmei entries without touching the rooms.
+ * Catalog. Current featured: 解鬱「放下」; prior 安神「學識放下，孑然一身」, 舒壓「打工仔，放鬆啲」.
+ * Next weeks can add anmei / yali / anshen entries without touching the rooms.
  */
 export const COMICS: readonly ComicEntry[] = [
+  {
+    id: "fangxia-let-go",
+    theme: "jieyu",
+    image: "/comics/fangxia-let-go.jpg?v=1",
+    published: "2026-11-07",
+    title: {
+      yue: "放下 · 阿力同豆豆",
+      cmn: "放下 · 阿力與豆豆",
+      en: "Let go · Alex & Dodo",
+    },
+    alt: {
+      yue: "四格漫畫：阿力喺林中話好亂呀；被繩綁住，豆豆喺旁邊望住；閉眼雙手張開，繩自己散開；豆豆話學會放開，路自然來。",
+      cmn: "四格漫畫：阿力在林中說好亂呀；被繩綁住，豆豆在旁邊看著；閉眼雙手張開，繩自己散開；豆豆說學會放開，路自然來。",
+      en: "Four-panel comic: Alex in a forest says it’s such a mess; ropes bind him while Dodo watches; eyes closed, hands open, the ropes fall away; Dodo says learn to let go, and the path comes on its own.",
+    },
+  },
   {
     id: "cloud-no-rush",
     theme: "anshen",
