@@ -12,6 +12,7 @@ import { useCopy, useLang } from "@/i18n/lang";
 import { FavList } from "@/components/fav-list";
 import { HOME_MUSIC } from "@/lib/room-music";
 import { HomeComic } from "@/components/home-comic";
+import { HomeWuzhi } from "@/components/home-wuzhi";
 
 export const Route = createFileRoute("/")({ component: Home });
 
@@ -109,6 +110,8 @@ function Home() {
           ))}
         </ul>
       </section>
+
+      <HomeWuzhi />
 
       <section id="rooms" className="grid gap-4 px-6 pb-16 md:grid-cols-2 md:px-12">
         <Link

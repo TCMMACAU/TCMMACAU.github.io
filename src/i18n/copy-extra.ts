@@ -109,7 +109,20 @@ export const CMN = {
 		illnessA: "如果你怕、心跳、坐不定——神散了，可以進安神。",
 		illnessB: "如果你悶悶不樂、不想動、心口翳悶——氣滯住，可以進解鬱。",
 		illnessC: "如果你睡不著、易醒——寐未歸，可以進安寐。",
-		illnessD: "如果你長期緊繃、肩頸僵硬、胃脹、心跳快——弦拉得太緊，可以進舒壓。"
+		illnessD: "如果你長期緊繃、肩頸僵硬、胃脹、心跳快——弦拉得太緊，可以進舒壓。",
+		wuzhiK: "情志致病",
+		wuzhiT: "五志",
+		wuzhiP1: "情志本身不是病。人有怒、有喜、有思、有悲、有恐，才叫做活在這世上。中醫將這五樣稱為「五志」，分別連著肝、心、脾、肺、腎。",
+		wuzhiP2: "某一志來得太猛、又或者拖得太久，氣機會亂，對應的臟腑都容易受累。所以情志致病，是看身心時一條總綱：心動了，身很多時候會一起出聲。",
+		wuzhiNote: "以下只是幫你認一認這個總網，不是對號入座，更不取代面診。",
+		wuzhiClose: "五志有起伏，是人之常情。若已經影響你吃飯、睡覺、工作、上學，可以在下面選一間房先試，或者約面診。這裏幫你認得訊號，不是幫你下診斷。",
+		wuzhiItems: [
+			{ title: "怒 · 肝", lead: "肝在志為怒。怒得太過，氣往上衝，中醫認為會傷肝。", seen: "常見可以見到：頭脹頭痛、面紅、胸脇脹悶、容易煩躁，一時平息不了。", img: "/wuzhi/nu.jpg?v=1", alt: "阿力眉頭皺著，面色偏紅" },
+			{ title: "喜 · 心", lead: "心在志為喜。歡喜是好事，但喜得太過、神收不回來，中醫認為會傷心。", seen: "常見可以見到：心神散、心悸、睡不著、說話跳躍，難以靜下來。", img: "/wuzhi/xi.jpg?v=1", alt: "阿力笑得太大，神收不回來" },
+			{ title: "思 · 脾", lead: "脾在志為思。想得多、惦記放不下，中醫認為會傷脾。", seen: "常見可以見到：胃口淡、胃脘脹、吃完也不消化，人容易倦。", img: "/wuzhi/si.jpg?v=1", alt: "阿力托腮皺眉，想著放不下" },
+			{ title: "悲 · 肺", lead: "肺在志為悲。悲從中來、反覆歎氣，中醫認為會傷肺。", seen: "常見可以見到：胸悶、愛歎氣、氣短、提不起勁，連聲音都可以弱了。", img: "/wuzhi/bei.jpg?v=1", alt: "阿力微微低頭，神色淡" },
+			{ title: "恐 · 腎", lead: "腎在志為恐。驚恐來得太大、又或者長期不安，中醫認為會傷腎。", seen: "常見可以見到：腰膝酸軟、心神不寧、容易受驚，坐不定。", img: "/wuzhi/kong.jpg?v=1", alt: "阿力眼睛睜大，手收到胸前" },
+		],
 	},
 	qr: {
 		kicker: "掃入網站",
@@ -1586,7 +1599,20 @@ export const EN = {
 		illnessA: "If you are afraid, the heart is fast, you cannot sit still — spirit is scattered. Try Calm the Mind.",
 		illnessB: "If you feel low and joyless, do not want to move, and the chest is stuffy — qi is stuck. Try Ease the Heart.",
 		illnessC: "If you lie awake or wake easily — sleep has not returned. Try Restful Sleep.",
-		illnessD: "If you have been wound up for long — stiff neck, bloated stomach, a racing heart — the string is pulled too tight. Try Stress Relief."
+		illnessD: "If you have been wound up for long — stiff neck, bloated stomach, a racing heart — the string is pulled too tight. Try Stress Relief.",
+		wuzhiK: "Emotions and illness",
+		wuzhiT: "The Five Emotions",
+		wuzhiP1: "Emotions themselves are not illness. To have anger, joy, thought, grief and fear is to be alive in this world. Chinese medicine calls these the Five Emotions (五志), each linked with the liver, heart, spleen, lungs and kidneys.",
+		wuzhiP2: "When one emotion comes too strongly, or lingers too long, the movement of qi is disturbed, and the organ that belongs with it is more easily worn. So “emotions leading to illness” is a main thread when looking at body and mind: when the heart is moved, the body often speaks with it.",
+		wuzhiNote: "What follows is only a map to help you recognise this. It is not a way to label yourself, and it does not replace a consultation.",
+		wuzhiClose: "The five emotions naturally rise and fall. If they already affect how you eat, sleep, work or study, you can try one of the rooms below, or book a visit. This helps you notice the signals; it is not a diagnosis.",
+		wuzhiItems: [
+			{ title: "Anger · Liver", lead: "The liver’s emotion is anger. When anger is excessive, qi rushes upward; Chinese medicine holds that this can harm the liver.", seen: "You may notice: a heavy or aching head, a flushed face, tightness in the chest and flanks, irritability that is slow to settle.", img: "/wuzhi/nu.jpg?v=1", alt: "Ali with a knitted brow and a slightly flushed face" },
+			{ title: "Joy · Heart", lead: "The heart’s emotion is joy. Joy is a good thing, but when it is excessive and the spirit cannot settle, Chinese medicine holds that this can harm the heart.", seen: "You may notice: a scattered spirit, palpitations, lying awake, speech that jumps about, difficulty becoming still.", img: "/wuzhi/xi.jpg?v=1", alt: "Ali smiling too widely, as if he cannot settle" },
+			{ title: "Thought · Spleen", lead: "The spleen’s emotion is thought. When thinking runs on and worries cannot be set down, Chinese medicine holds that this can harm the spleen.", seen: "You may notice: a poor appetite, fullness in the upper abdomen, food that will not digest, an easy tiredness.", img: "/wuzhi/si.jpg?v=1", alt: "Ali resting his chin on his hand, lost in thought" },
+			{ title: "Grief · Lungs", lead: "The lungs’ emotion is grief. When grief rises from within and sighing keeps returning, Chinese medicine holds that this can harm the lungs.", seen: "You may notice: tightness in the chest, frequent sighing, shortness of breath, no energy to lift oneself, and even the voice may grow weak.", img: "/wuzhi/bei.jpg?v=1", alt: "Ali with his head slightly lowered, quietly sad" },
+			{ title: "Fear · Kidneys", lead: "The kidneys’ emotion is fear. When fright comes too strongly, or unease lasts too long, Chinese medicine holds that this can harm the kidneys.", seen: "You may notice: weakness in the lower back and knees, a restless spirit, being easily startled, an inability to sit still.", img: "/wuzhi/kong.jpg?v=1", alt: "Ali with widened eyes and hands drawn to his chest" },
+		],
 	},
 	qr: {
 		kicker: "Scan to enter",
