@@ -10,30 +10,30 @@ export function HomeWuzhi() {
       <p className="mt-4 text-ink">{home.wuzhiP1}</p>
       <p className="mt-3 text-ink">{home.wuzhiP2}</p>
       <p className="mt-3 text-muted">{home.wuzhiNote}</p>
-      <ul className="mt-8 grid gap-4">
+      <ul className="mt-5 grid gap-3 sm:grid-cols-2">
         {home.wuzhiItems.map((item) => (
           <li
             key={item.title}
-            className="flex gap-4 rounded-card border border-line bg-paper p-4 sm:gap-5 sm:p-5"
+            className="flex gap-3 rounded-card border border-line bg-paper p-3"
           >
             <img
               src={item.img}
               alt={item.alt}
-              width={160}
-              height={160}
+              width={96}
+              height={96}
               loading="lazy"
               decoding="async"
-              className="h-28 w-28 shrink-0 rounded-card object-cover sm:h-36 sm:w-36"
+              className="h-20 w-20 shrink-0 rounded-card object-cover sm:h-24 sm:w-24"
             />
             <div className="min-w-0">
-              <h3 className="font-serif text-2xl text-accent">{item.title}</h3>
-              <p className="mt-2 text-sm text-ink">{item.lead}</p>
-              <p className="mt-2 text-sm text-muted">{item.seen}</p>
+              <h3 className="font-serif text-xl text-accent">{item.title}</h3>
+              <p className="mt-1 text-sm leading-relaxed text-ink">{item.lead}</p>
+              <p className="mt-1 text-sm leading-relaxed text-muted">{item.seen}</p>
             </div>
           </li>
         ))}
       </ul>
-      <p className="mt-6 text-ink">{home.wuzhiClose}</p>
+      <p className="mt-5 text-ink">{home.wuzhiClose}</p>
     </section>
   );
 }
