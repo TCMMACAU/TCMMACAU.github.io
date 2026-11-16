@@ -44,7 +44,7 @@ export const COMICS: readonly ComicEntry[] = [
   {
     id: "breath-for-sleep",
     theme: "anmei",
-    image: "/comics/breath-for-sleep.jpg?v=3",
+    image: "/comics/breath-for-sleep.jpg?v=4",
     published: "2026-11-14",
     title: {
       yue: "用呼吸調節睡眠 · 阿力同豆豆",
