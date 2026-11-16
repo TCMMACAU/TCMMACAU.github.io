@@ -42,19 +42,19 @@ export const COMIC_THEME_ROOM: Record<ComicTheme, "/anshen" | "/jieyu" | "/anmei
  */
 export const COMICS: readonly ComicEntry[] = [
   {
-    id: "night-no-rush",
+    id: "breath-for-sleep",
     theme: "anmei",
-    image: "/comics/night-no-rush.jpg?v=1",
+    image: "/comics/breath-for-sleep.jpg?v=1",
     published: "2026-11-14",
     title: {
-      yue: "夜唔趕人 · 阿力同豆豆",
-      cmn: "夜不趕人 · 阿力與豆豆",
-      en: "The night doesn’t rush · Alex & Dodo",
+      yue: "用呼吸調節睡眠 · 阿力同豆豆",
+      cmn: "用呼吸調節睡眠 · 阿力與豆豆",
+      en: "Using breath to settle sleep · Alex & Dodo",
     },
     alt: {
-      yue: "四格漫畫：阿力坐喺月下湖邊，話腦仲喺度轉；豆豆叫佢唔使催，聽下夜；兩人靜靜望月，無對白；最後阿力話夜好靜，豆豆話睏意會自己嚟。",
-      cmn: "四格漫畫：阿力坐在月下湖边，说脑子还在转；豆豆叫他不用催，听听夜；两人静静望月，无对白；最后阿力说夜好静，豆豆说睡意会自己来。",
-      en: "Four-panel comic: Alex sits by a moonlit lake, his mind still turning. Dodo says there’s no need to hurry it—listen to the night. They sit quietly facing the moon, with no dialogue. Alex says the night is so quiet; Dodo says sleep will come on its own.",
+      yue: "四格漫畫：夜間睡房，阿力瞓喺床上，話瞓唔著、個腦一直喺度轉；豆豆喺床邊叫佢唔好急，試下四六式呼吸法；阿力放鬆呼吸；最後阿力話個腦入面放空咗，豆豆話睡意自然會嚟。",
+      cmn: "四格漫畫：夜間睡房，阿力躺在床上，说睡不着、脑子一直在转；豆豆在床边叫他不要急，试试四六式呼吸法；阿力放松呼吸；最后阿力说脑子里面放空了，豆豆说睡意自然会来。",
+      en: "Four-panel comic: In a bedroom at night, Alex lies awake, saying he can't sleep and his mind keeps turning. Dodo, at the bedside, tells him not to rush and to try four-six breathing. Alex breathes and relaxes. Alex says his mind has gone quiet; Dodo says sleep will come naturally.",
     },
   },
   {
