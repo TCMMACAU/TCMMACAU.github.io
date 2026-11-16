@@ -309,6 +309,101 @@ export const JIEQI_FOOD: Record<string, { yue: SeasonFood; cmn: SeasonFood; en: 
       source: "Source: Wang Shixiong, Suixiju Yinshipu (隨息居飲食譜), fruit section, \u201cChestnut\u201d and \u201cJujube\u201d.",
     },
   },
+
+  小雪: {
+    urls: ["https://ctext.org/wiki.pl?chapter=903886&if=gb", "https://jicheng.tw/tcm/book/%E9%9A%A8%E6%81%AF%E5%B1%85%E9%A3%B2%E9%A3%9F%E8%AD%9C/index.html"],
+    yue: {
+      kicker: "時令飲食 · 隨息居",
+      intro: "清代王士雄嘅《隨息居飲食譜》，記錄咗好多日常食材嘅性味。小雪前後天氣再涼，胡桃同生薑係書中常見、澳門屋企又易買到嘅暖食材料，以下係書中原文，同一個屋企做得到嘅食法。",
+      foods: [
+        {
+          name: "胡桃",
+          img: "/foods/walnut.jpg",
+          quote: "「胡桃（一名核桃）甘溫。潤肺，益腎，利腸……以殼薄、肉厚、味甜者良。……惟助火生痰，非虛寒者，勿多食也。」",
+          explain: "書中話胡桃味甘、性溫，要揀殼薄、肉厚、味甜嘅；亦提醒佢會助火生痰，唔係虛寒體質就唔好食太多。",
+        },
+        {
+          name: "生薑",
+          img: "/foods/ginger.jpg",
+          quote: "「姜辛熱。散風寒，溫中，去痰濕……可醬漬，可糖醃。多食、久食，耗液傷營。……均忌之。」",
+          explain: "書中話姜味辛、性熱；可以醬或者糖醃。亦提醒多食、久食會耗液；內熱、目疾、喉患、血證、瘡瘍同病後等人唔宜。",
+        },
+      ],
+      recipe: {
+        title: "薑煮胡桃",
+        ingredients: ["胡桃肉 4 至 6 粒", "生薑 2 至 3 片（約拇指厚）", "清水 約 300 毫升", "紅糖或冰糖 少許（可以唔放）"],
+        steps: [
+          "胡桃肉略掰細；生薑洗淨切片。",
+          "小鍋入清水同薑片，大火滾起後轉細火煮約 5 分鐘。",
+          "放入胡桃肉，再煮約 3 至 5 分鐘；想甜可以落少許糖。",
+          "趁暖慢慢飲同食；一次唔好食太多胡桃。",
+        ],
+      },
+      note: "以上係傳統飲食文化介紹，唔係食療處方，亦唔保證有任何效果。飲食因人而異，有病情或者食緊藥，請先問醫師。",
+      source: "原文出處：王士雄《隨息居飲食譜》果食類「胡桃」、蔬食類「姜」。",
+    },
+    cmn: {
+      kicker: "時令飲食 · 隨息居",
+      intro: "清代王士雄的《隨息居飲食譜》，記錄了許多日常食材的性味。小雪前後天氣再涼，胡桃與生薑是書中常見、澳門家裏又容易買到的暖食材料，以下是書中原文，和一個在家做得到的食法。",
+      foods: [
+        {
+          name: "胡桃",
+          img: "/foods/walnut.jpg",
+          quote: "「胡桃（一名核桃）甘溫。潤肺，益腎，利腸……以殼薄、肉厚、味甜者良。……惟助火生痰，非虛寒者，勿多食也。」",
+          explain: "書中說胡桃味甘、性溫，要挑殼薄、肉厚、味甜的；也提醒它會助火生痰，不是虛寒體質就不要多吃。",
+        },
+        {
+          name: "生薑",
+          img: "/foods/ginger.jpg",
+          quote: "「姜辛熱。散風寒，溫中，去痰濕……可醬漬，可糖醃。多食、久食，耗液傷營。……均忌之。」",
+          explain: "書中說姜味辛、性熱；可以醬或糖醃。也提醒多食、久食會耗液；內熱、目疾、喉患、血證、瘡瘍與病後等人不宜。",
+        },
+      ],
+      recipe: {
+        title: "薑煮胡桃",
+        ingredients: ["胡桃肉 4 至 6 粒", "生薑 2 至 3 片（約拇指厚）", "清水 約 300 毫升", "紅糖或冰糖 少許（可不放）"],
+        steps: [
+          "胡桃肉略掰碎；生薑洗淨切片。",
+          "小鍋放入清水與薑片，大火煮開後轉小火煮約 5 分鐘。",
+          "放入胡桃肉，再煮約 3 至 5 分鐘；想甜可加少許糖。",
+          "趁暖慢慢飲用並食用；一次不要吃太多胡桃。",
+        ],
+      },
+      note: "以上是傳統飲食文化介紹，不是食療處方，也不保證任何效果。飲食因人而異，有病情或正在服藥，請先問醫師。",
+      source: "原文出處：王士雄《隨息居飲食譜》果食類「胡桃」、蔬食類「姜」。",
+    },
+    en: {
+      kicker: "Seasonal food · Suixiju",
+      intro: "The Qing-dynasty doctor Wang Shixiong's Suixiju Yinshipu (隨息居飲食譜) records the nature and flavour of many everyday foods. Around Minor Snow the weather cools further; walnut and fresh ginger are common warming ingredients in the book and easy to find in a Macau kitchen. Below are the book's original words, and one way of preparing them that can be done at home.",
+      foods: [
+        {
+          name: "Walnut",
+          img: "/foods/walnut.jpg",
+          quote: "「胡桃（一名核桃）甘溫。潤肺，益腎，利腸……以殼薄、肉厚、味甜者良。……惟助火生痰，非虛寒者，勿多食也。」",
+          explain: "The book says walnut is sweet and warm in nature, and to choose ones with thin shells, thick kernels and a sweet taste; it also warns that it can assist fire and generate phlegm, and that those who are not of a deficient-cold constitution should not eat much of it.",
+        },
+        {
+          name: "Fresh ginger",
+          img: "/foods/ginger.jpg",
+          quote: "「姜辛熱。散風寒，溫中，去痰濕……可醬漬，可糖醃。多食、久食，耗液傷營。……均忌之。」",
+          explain: "The book says ginger is acrid and hot in nature, and may be pickled with sauce or sugar. It also warns that eating much of it, or for a long time, consumes fluids; people with internal heat, eye or throat conditions, bleeding disorders, sores, and those after illness should avoid it.",
+        },
+      ],
+      recipe: {
+        title: "Ginger-boiled Walnuts",
+        ingredients: ["4 to 6 walnut kernels", "2 to 3 slices of fresh ginger (about as thick as a thumb)", "About 300 ml water", "A little brown sugar or rock sugar (optional)"],
+        steps: [
+          "Break the walnut kernels into slightly smaller pieces; wash and slice the ginger.",
+          "Put the water and ginger slices in a small pot, bring to a boil, then simmer on low heat for about 5 minutes.",
+          "Add the walnut kernels and cook for another 3 to 5 minutes; add a little sugar if you like it sweet.",
+          "Drink and eat slowly while warm; do not eat too many walnuts at one sitting.",
+        ],
+      },
+      note: "The above introduces traditional food culture. It is not a dietary-therapy prescription and does not guarantee any effect. Food affects people differently; if you have a medical condition or are taking medication, please ask a doctor first.",
+      source: "Source: Wang Shixiong, Suixiju Yinshipu (隨息居飲食譜), fruit section, \u201cWalnut\u201d and vegetable section, \u201cGinger\u201d.",
+    },
+  },
+
 };
 
 export type JieqiArticle = {
@@ -432,4 +527,43 @@ export const JIEQI_ARTICLES: Record<string, JieqiArticle> = {
       source: "Quotations: Yueling Qishier Hou Jijie; Huangdi Neijing Suwen, Sishi Tiaoshen Dalun.",
     },
   },
+
+  小雪: {
+    room: "/anshen",
+    card: "/jieqi/xiaoxue",
+    yue: {
+      title: "小雪：雪未盛，事可以切細啲",
+      paras: [
+        "小雪係冬天第二個節氣。《月令七十二候集解》講：「小雪，十月中。雨下而為寒氣所薄，故凝而為雪。小者，未盛之辭。」又記三候：虹藏不見、天氣上升、地氣下降，終歸「閉塞而成冬」。雨遇寒氣凝成雪，但「小」係話未到盛大；虹伏、天地之氣唔交，季節再收一層。",
+        "喺澳門未必見雪，但日再短、風再涼，身同心情都會想收細啲。有人會覺得件事好多、一步都行唔開；亦有人只係想食暖啲、行程放慢少少。想收、想細，係常見嘅事，唔一定代表有問題。",
+        "《素問·四氣調神大論》講冬三月「此謂閉藏……使志若伏若匿」。放喺今日，可以係唔硬撐一次做晒：食暖啲，要做嘅事再切細啲，等個心好似虹氣下伏咁，慢慢收、慢慢行。",
+        "如果近排主要係心神散、靜唔落嚟，或者一諗到成堆事就繃緊，可以慢慢行入安神，睇下收神同放鬆嘅做法。呢度係教育內容，唔係診斷；持續影響生活嘅話，請搵醫師面診。",
+      ],
+      roomLine: "進入安神 →",
+      source: "引文：《月令七十二候集解》；《黃帝內經素問·四氣調神大論》。",
+    },
+    cmn: {
+      title: "小雪：雪未盛，事可以切細一點",
+      paras: [
+        "小雪是冬天第二個節氣。《月令七十二候集解》說：「小雪，十月中。雨下而為寒氣所薄，故凝而為雪。小者，未盛之辭。」又記三候：虹藏不見、天氣上升、地氣下降，終歸「閉塞而成冬」。雨遇寒氣凝成雪，但「小」是說尚未盛大；虹伏、天地之氣不相交，季節再收一層。",
+        "在澳門未必見到雪，但日再短、風再涼，身體和心情都會想收細一點。有人會覺得事情很多、一步都邁不開；也有人只是想吃得暖些、行程放慢一點。想收、想細，是常見的事，不一定代表有問題。",
+        "《素問·四氣調神大論》說冬三月「此謂閉藏……使志若伏若匿」。放在今天，可以是不硬撐一次做完：吃得暖些，要做的事再切細一點，讓心像虹氣下伏一樣，慢慢收、慢慢行。",
+        "如果近來主要是心神散、靜不下來，或者一想到成堆事就繃緊，可以慢慢走進安神，看看收神與放鬆的做法。這裏是教育內容，不是診斷；持續影響生活的話，請找醫師面診。",
+      ],
+      roomLine: "進入安神 →",
+      source: "引文：《月令七十二候集解》；《黃帝內經素問·四氣調神大論》。",
+    },
+    en: {
+      title: "Minor Snow: the snow is not yet full, and tasks can be cut smaller",
+      paras: [
+        "Minor Snow is the second solar term of winter. The Yueling Qishier Hou Jijie (月令七十二候集解) says: \u201cMinor Snow, the mid-tenth-month term. Rain falls and is pressed by cold qi, so it congeals as snow. \u2018Minor\u2019 means not yet abundant.\u201d It also records three pentads: the rainbow is hidden and unseen; heaven's qi rises; earth's qi descends \u2014 ending in \u201cclosed and blocked, and thus winter is formed.\u201d Rain meets cold and becomes snow, yet \u201cminor\u201d means it is not yet full; the rainbow withdraws, heaven and earth's qi do not meet, and the season draws in another layer.",
+        "In Macau there may be no snow, yet the days grow shorter and the wind cooler \u2014 body and mood often want to draw in a little finer. Some people feel there is too much to do and cannot take a first step; others simply want to eat a little warmer and slow the schedule. Wanting to gather in and go finer is common and does not necessarily mean anything is wrong.",
+        "The Suwen's Sishi Tiaoshen Dalun (《素問·四氣調神大論》) says that in the three months of winter \u201cthis is called closing and storing\u2026. keep the will as if hidden and concealed.\u201d In today's terms, that might mean not forcing everything at once: eat a little warmer, cut what must be done into smaller pieces, and let the heart, like the rainbow's qi sinking out of sight, gather slowly and walk slowly.",
+        "If lately the main thing is a scattered spirit that will not settle, or tensing up at the thought of a pile of tasks, you can walk slowly into Calm the Mind and look at ways of gathering the mind and relaxing. This is educational content, not a diagnosis; if it keeps affecting your life, please see a doctor in person.",
+      ],
+      roomLine: "Enter Calm the Mind →",
+      source: "Quotations: Yueling Qishier Hou Jijie; Huangdi Neijing Suwen, Sishi Tiaoshen Dalun.",
+    },
+  },
+
 };
