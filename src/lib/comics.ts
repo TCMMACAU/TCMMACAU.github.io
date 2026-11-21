@@ -42,6 +42,22 @@ export const COMIC_THEME_ROOM: Record<ComicTheme, "/anshen" | "/jieyu" | "/anmei
  */
 export const COMICS: readonly ComicEntry[] = [
   {
+    id: "breath-for-sleep",
+    theme: "anmei",
+    image: "/comics/breath-for-sleep.jpg?v=4",
+    published: "2026-11-21",
+    title: {
+      yue: "用呼吸調節睡眠 · 阿力同豆豆",
+      cmn: "用呼吸調節睡眠 · 阿力與豆豆",
+      en: "Using breath to settle sleep · Alex & Dodo",
+    },
+    alt: {
+      yue: "四格漫畫：夜間睡房，阿力瞓喺床上，話瞓唔著、個腦一直喺度轉；豆豆喺床邊叫佢唔好急，試下四六式呼吸法；阿力放鬆呼吸；最後阿力話個腦入面放空咗，豆豆話睡意自然會嚟。",
+      cmn: "四格漫畫：夜間睡房，阿力躺在床上，说睡不着、脑子一直在转；豆豆在床边叫他不要急，试试四六式呼吸法；阿力放松呼吸；最后阿力说脑子里面放空了，豆豆说睡意自然会来。",
+      en: "Four-panel comic: In a bedroom at night, Alex lies awake, saying he can't sleep and his mind keeps turning. Dodo, at the bedside, tells him not to rush and to try four-six breathing. Alex breathes and relaxes. Alex says his mind has gone quiet; Dodo says sleep will come naturally.",
+    },
+  },
+  {
     id: "fangxia-let-go",
     theme: "jieyu",
     image: "/comics/fangxia-let-go.jpg?v=1",
