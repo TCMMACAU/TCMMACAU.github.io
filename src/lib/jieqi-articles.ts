@@ -532,7 +532,7 @@ export const JIEQI_ARTICLES: Record<string, JieqiArticle> = {
     room: "/anshen",
     card: "/jieqi/xiaoxue",
     yue: {
-      title: "小雪：雪未盛，事可以切細啲",
+      title: "小雪：雪未盛，心情可以再放開啲",
       paras: [
         "小雪係冬天第二個節氣。《月令七十二候集解》講：「小雪，十月中。雨下而為寒氣所薄，故凝而為雪。小者，未盛之辭。」又記三候：虹藏不見、天氣上升、地氣下降，終歸「閉塞而成冬」。雨遇寒氣凝成雪，但「小」係話未到盛大；虹伏、天地之氣唔交，季節再收一層。",
         "喺澳門未必見雪，但日再短、風再涼，身同心情都會想收細啲。有人會覺得件事好多、一步都行唔開；亦有人只係想食暖啲、行程放慢少少。想收、想細，係常見嘅事，唔一定代表有問題。",
@@ -543,7 +543,7 @@ export const JIEQI_ARTICLES: Record<string, JieqiArticle> = {
       source: "引文：《月令七十二候集解》；《黃帝內經素問·四氣調神大論》。",
     },
     cmn: {
-      title: "小雪：雪未盛，事可以切細一點",
+      title: "小雪：雪未盛，心情可以再放開一點",
       paras: [
         "小雪是冬天第二個節氣。《月令七十二候集解》說：「小雪，十月中。雨下而為寒氣所薄，故凝而為雪。小者，未盛之辭。」又記三候：虹藏不見、天氣上升、地氣下降，終歸「閉塞而成冬」。雨遇寒氣凝成雪，但「小」是說尚未盛大；虹伏、天地之氣不相交，季節再收一層。",
         "在澳門未必見到雪，但日再短、風再涼，身體和心情都會想收細一點。有人會覺得事情很多、一步都邁不開；也有人只是想吃得暖些、行程放慢一點。想收、想細，是常見的事，不一定代表有問題。",
@@ -554,7 +554,7 @@ export const JIEQI_ARTICLES: Record<string, JieqiArticle> = {
       source: "引文：《月令七十二候集解》；《黃帝內經素問·四氣調神大論》。",
     },
     en: {
-      title: "Minor Snow: the snow is not yet full, and tasks can be cut smaller",
+      title: "Minor Snow: the snow is not yet full, and the heart can ease a little more",
       paras: [
         "Minor Snow is the second solar term of winter. The Yueling Qishier Hou Jijie (月令七十二候集解) says: \u201cMinor Snow, the mid-tenth-month term. Rain falls and is pressed by cold qi, so it congeals as snow. \u2018Minor\u2019 means not yet abundant.\u201d It also records three pentads: the rainbow is hidden and unseen; heaven's qi rises; earth's qi descends \u2014 ending in \u201cclosed and blocked, and thus winter is formed.\u201d Rain meets cold and becomes snow, yet \u201cminor\u201d means it is not yet full; the rainbow withdraws, heaven and earth's qi do not meet, and the season draws in another layer.",
         "In Macau there may be no snow, yet the days grow shorter and the wind cooler \u2014 body and mood often want to draw in a little finer. Some people feel there is too much to do and cannot take a first step; others simply want to eat a little warmer and slow the schedule. Wanting to gather in and go finer is common and does not necessarily mean anything is wrong.",
