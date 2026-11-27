@@ -42,6 +42,22 @@ export const COMIC_THEME_ROOM: Record<ComicTheme, "/anshen" | "/jieyu" | "/anmei
  */
 export const COMICS: readonly ComicEntry[] = [
   {
+    id: "family-time-after-work",
+    theme: "yali",
+    image: "/comics/family-time-after-work.jpg?v=1",
+    published: "2026-11-28",
+    title: {
+      yue: "放工，將時間留比家人 · 阿力同豆豆",
+      cmn: "放工，將時間留給家人 · 阿力與豆豆",
+      en: "After work, leave time for family · Alex & Dodo",
+    },
+    alt: {
+      yue: "四格漫畫：傍晚阿力裇衫皺、面色好攰，返到門口剛除低鞋，話終於返到；飯枱上面一邊食一邊睇住部手提電腦，筷子停咗半空；豆豆坐喺隔離望住個螢幕，叫佢放低先得唔得、陪下我啦；最後兩個人坐喺沙發前面打機，豆豆好投入，阿力仲有少少倦但已經喺笑，話再一鋪。",
+      cmn: "四格漫畫：傍晚阿力衬衫有点皱、面色很累，回到门口刚脱了鞋，说终于回到了；饭桌上边吃边看着手提电脑，筷子停在半空；豆豆坐在旁边望着屏幕，问他先放下行不行、陪陪我吧；最后两个人坐在沙发前面打游戏，豆豆很投入，阿力还有一点倦但已经在笑，说再来一局。",
+      en: "Four-panel comic: At dusk Alex comes home in a wrinkled work shirt, looking exhausted, and has just taken off his shoes, saying he is finally back. At the dinner table he eats while looking at a laptop, chopsticks paused in mid-air. Dodo sits beside him, looking at the screen, and asks whether he can put it down and keep Dodo company. Finally the two sit on the sofa playing a game; Dodo is fully into it, and Alex is still a little tired but already smiling: one more round.",
+    },
+  },
+  {
     id: "breath-for-sleep",
     theme: "anmei",
     image: "/comics/breath-for-sleep.jpg?v=4",
