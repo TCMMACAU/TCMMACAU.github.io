@@ -107,15 +107,41 @@ export const COMICS: readonly ComicEntry[] = [
   },
 ];
 
-/** Latest comic by published date (stable tie-break by id). */
-export function currentComic(list: readonly ComicEntry[] = COMICS): ComicEntry {
-  if (list.length === 0) {
+/** Calendar date in Asia/Macau (UTC+8, no DST), as YYYY-MM-DD. */
+export function macauToday(now: Date = new Date()): string {
+  return new Date(now.getTime() + 8 * 3600 * 1000).toISOString().slice(0, 10);
+}
+
+/** Already-live comics, newest first. Entries dated after `now` stay hidden. */
+export function publishedComics(
+  list: readonly ComicEntry[] = COMICS,
+  now: Date | string = new Date(),
+): ComicEntry[] {
+  const today = typeof now === "string" ? now : macauToday(now);
+  return [...list]
+    .filter((c) => c.published <= today)
+    .sort((a, b) => {
+      const byDate = b.published.localeCompare(a.published);
+      return byDate !== 0 ? byDate : b.id.localeCompare(a.id);
+    });
+}
+
+/** Latest already-live comic (stable tie-break by id). */
+export function currentComic(
+  list: readonly ComicEntry[] = COMICS,
+  now: Date | string = new Date(),
+): ComicEntry {
+  const pub = publishedComics(list, now);
+  if (pub.length === 0) {
     throw new Error("COMICS is empty");
   }
-  return [...list].sort((a, b) => {
-    const byDate = b.published.localeCompare(a.published);
-    return byDate !== 0 ? byDate : b.id.localeCompare(a.id);
-  })[0]!;
+  return pub[0]!;
+}
+
+export function formatComicDate(iso: string): string {
+  const [y, m, d] = iso.split("-");
+  if (!y || !m || !d) return iso;
+  return `${y}年${Number(m)}月${Number(d)}日`;
 }
 
 export function comicText(text: ComicText, lang: Lang): string {

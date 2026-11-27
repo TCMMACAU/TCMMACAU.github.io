@@ -13,18 +13,21 @@ const UI = {
     badge: "逢周六更新",
     thisWeek: (room: string) => `本期：${room}`,
     roomGo: (room: string) => `去${room} →`,
+    archive: "睇過往四格 →",
   },
   cmn: {
     kicker: "四格漫畫",
     badge: "逢周六更新",
     thisWeek: (room: string) => `本期：${room}`,
     roomGo: (room: string) => `去${room} →`,
+    archive: "看過往四格 →",
   },
   en: {
     kicker: "Four-panel comic",
     badge: "Updates every Saturday",
     thisWeek: (room: string) => `This week: ${room}`,
     roomGo: (room: string) => `Go to ${room} →`,
+    archive: "Past comics →",
   },
 } as const;
 
@@ -70,14 +73,17 @@ export function HomeComic() {
             className="block h-auto w-full"
           />
         </figure>
-        <p className="mt-5">
+        <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2">
           <Link
             to={COMIC_THEME_ROOM[comic.theme]}
             className="text-sm text-accent no-underline"
           >
             {ui.roomGo(theme)}
           </Link>
-        </p>
+          <Link to="/comics" className="text-sm text-accent no-underline">
+            {ui.archive}
+          </Link>
+        </div>
       </div>
     </section>
   );

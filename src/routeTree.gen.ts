@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AnmeiRouteImport } from './routes/anmei'
 import { Route as AnshenRouteImport } from './routes/anshen'
+import { Route as ComicsRouteImport } from './routes/comics'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as JieqiRouteImport } from './routes/jieqi'
 import { Route as JieyuRouteImport } from './routes/jieyu'
@@ -32,6 +33,11 @@ const AnmeiRoute = AnmeiRouteImport.update({
 const AnshenRoute = AnshenRouteImport.update({
   id: '/anshen',
   path: '/anshen',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComicsRoute = ComicsRouteImport.update({
+  id: '/comics',
+  path: '/comics',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FaqRoute = FaqRouteImport.update({
@@ -69,6 +75,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/anmei': typeof AnmeiRoute
   '/anshen': typeof AnshenRoute
+  '/comics': typeof ComicsRoute
   '/faq': typeof FaqRoute
   '/jieqi': typeof JieqiRoute
   '/jieyu': typeof JieyuRoute
@@ -80,6 +87,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/anmei': typeof AnmeiRoute
   '/anshen': typeof AnshenRoute
+  '/comics': typeof ComicsRoute
   '/faq': typeof FaqRoute
   '/jieqi': typeof JieqiRoute
   '/jieyu': typeof JieyuRoute
@@ -92,6 +100,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/anmei': typeof AnmeiRoute
   '/anshen': typeof AnshenRoute
+  '/comics': typeof ComicsRoute
   '/faq': typeof FaqRoute
   '/jieqi': typeof JieqiRoute
   '/jieyu': typeof JieyuRoute
@@ -105,6 +114,7 @@ export interface FileRouteTypes {
     | '/'
     | '/anmei'
     | '/anshen'
+    | '/comics'
     | '/faq'
     | '/jieqi'
     | '/jieyu'
@@ -116,6 +126,7 @@ export interface FileRouteTypes {
     | '/'
     | '/anmei'
     | '/anshen'
+    | '/comics'
     | '/faq'
     | '/jieqi'
     | '/jieyu'
@@ -127,6 +138,7 @@ export interface FileRouteTypes {
     | '/'
     | '/anmei'
     | '/anshen'
+    | '/comics'
     | '/faq'
     | '/jieqi'
     | '/jieyu'
@@ -139,6 +151,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AnmeiRoute: typeof AnmeiRoute
   AnshenRoute: typeof AnshenRoute
+  ComicsRoute: typeof ComicsRoute
   FaqRoute: typeof FaqRoute
   JieqiRoute: typeof JieqiRoute
   JieyuRoute: typeof JieyuRoute
@@ -168,6 +181,13 @@ declare module '@tanstack/react-router' {
       path: '/anshen'
       fullPath: '/anshen'
       preLoaderRoute: typeof AnshenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/comics': {
+      id: '/comics'
+      path: '/comics'
+      fullPath: '/comics'
+      preLoaderRoute: typeof ComicsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/faq': {
@@ -219,6 +239,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AnmeiRoute: AnmeiRoute,
   AnshenRoute: AnshenRoute,
+  ComicsRoute: ComicsRoute,
   FaqRoute: FaqRoute,
   JieqiRoute: JieqiRoute,
   JieyuRoute: JieyuRoute,
